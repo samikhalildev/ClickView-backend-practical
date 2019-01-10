@@ -78,6 +78,8 @@ router.delete("/:video_id", (req, res) => {
 });
 
 
+
+
 /*  @route      POST api/videos/folder
     @desc       Fetch videos by folder
     @access     Public
@@ -112,5 +114,41 @@ function getTargetFolder(folder){
     var names = folder.split('->');
     return names[names.length - 1];
 }
+
+
+
+
+
+/*  @route      POST api/videos/tag
+    @desc       Fetch videos by tag
+    @access     Public
+ */
+router.post('/tag', (req, res) => {
+    var tags = req.body.tag;
+
+    Video.find()
+        .then(videos => {
+            const videosResult = [];
+            var i = 0;
+
+            videos.map((video) => {
+
+                for(var j = 0; j < video.tags.length; j++){
+
+                    if(tags.includes(video.tags[j])){
+                        videosResult[i++] = video;
+                        break;
+                    }
+                };
+            });
+
+            if(videosResult.length > 0)
+                res.json(videosResult);
+            else
+                res.status(404).json({ msg: 'No videos found for this tag.' });
+
+        })
+        .catch(err => res.status(404).json(err));
+});
 
 module.exports = router;
