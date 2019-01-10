@@ -64,7 +64,6 @@ app.listen(PORT, () => console.log(`Server running on ${PORT}`));
 
 
 
-
 // Read videos.json
 function readJSONData() {
     fs.readFile('videos.json', (err, data) => {
@@ -78,8 +77,8 @@ function readJSONData() {
 }
 
 function addDataToDB(data) {
-    data.map((video) => {
 
+    data.map((video) => {
         // create a video object
         const newVideo = new Video ({
             name: video.name,

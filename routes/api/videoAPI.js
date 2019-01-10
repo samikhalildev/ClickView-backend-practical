@@ -77,4 +77,40 @@ router.delete("/:video_id", (req, res) => {
 
 });
 
+
+/*  @route      POST api/videos/folder
+    @desc       Fetch videos by folder
+    @access     Public
+ */
+router.post('/folder', (req, res) => {
+    var folder = req.body.folder;
+    var targetFolder = getTargetFolder(folder.toLowerCase());
+
+    Video.find()
+        .then(videos => {
+            const videosResult = [];
+            var i = 0;
+
+            videos.map((video) => {
+
+                if(video.folder.toLowerCase().includes(targetFolder))
+                    videosResult[i++] = video;
+
+            });
+
+            if(videosResult.length > 0)
+                res.json(videosResult);
+            else
+                res.status(404).json({ msg: 'No videos found in this folder.' });
+
+        })
+        .catch(err => res.status(404).json(err));
+});
+
+
+function getTargetFolder(folder){
+    var names = folder.split('->');
+    return names[names.length - 1];
+}
+
 module.exports = router;
