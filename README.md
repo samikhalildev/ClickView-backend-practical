@@ -9,7 +9,7 @@ Uses nodejs and express as a backend service and mongo as the database.
 - git clone this repo
 - `cd` into the directory and `npm install` so that you have all the dependencies needed to run the program.
 - run `nodemon` or `npm start` to start the server and the database
-
+http://localhost:3000
 
 ## API
 
