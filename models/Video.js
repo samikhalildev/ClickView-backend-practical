@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
 // Create Schema
 const VideoSchema = new Schema({
 
@@ -11,17 +10,15 @@ const VideoSchema = new Schema({
     },
 
     duration: {
-        type: Number,
-        required: true
+        type: Number
     },
 
     description: {
-        type: String,
-        required: true
+        type: String
     },
 
     dateCreated: {
-        type: Date.now
+        type: Date
     },
 
     thumbnail: {
