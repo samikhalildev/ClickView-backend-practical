@@ -1,0 +1,24 @@
+{
+  "name": "backend-graduate-practical",
+  "version": "1.0.0",
+  "description": "Please try and complete as much of this practical as possible in the allotted time. You will be judged on your overall OO design skills, use of language best practices, code reuse and design patterns. Keep in mind that this is not an assignment and there are no strict marking criteria or rules. We are simply looking for a demonstration of your ability to design and implement software. You may use any programming languages and frameworks that you are comfortable with.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samikhalildev/ClickView-backend-practical.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samikhalildev/ClickView-backend-practical/issues"
+  },
+  "homepage": "https://github.com/samikhalildev/ClickView-backend-practical#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.3",
+    "nodemon": "^1.18.9"
+  }
+}
