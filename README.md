@@ -18,7 +18,7 @@ Uses nodejs and express as a backend service and mongo as the database.
     - Data must be sent with the body of the request (use postman)
     - To update a specific video you must include the video name with updated fields in the body of the request
 - DELETE - Delete a video: api/videos/video_id:
-    - Include the video delete in the url parameter.
+    - Include the video id in the url parameter.
 
 - POST - Fetch videos by folder: /api/videos/folder
     - Folder name must be included in the body of the request e.g. folder: "Senior"
